@@ -49,8 +49,6 @@ IoT Smart Gesture Controller
 3.Smart Gesture Controller Testing
 -------------
 
-<br>
-
 ### -  Sensor Graph
 
 ![Alt text](/img/Sensor_visualization.JPG)
