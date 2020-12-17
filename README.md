@@ -35,14 +35,14 @@ IoT Smart Gesture Controller
 
 * 두 시계열 간의 거리를 최소화하는 하는 방향으로 움직이면서 매칭시켜 각 템플릿과의 누적 거리를 계산하여 최소화 보간.
   
-![Alt text](/img/DTW_math.jpg)
+![Alt text](/img/DTW_math.JPG)
 * 템플릿 2차원 배열을 생성하여 각 데이터를 로우와 컬럼으로 입력.
   
 * 데이터 요소간의 차이의 절대값에 이전 값을 더해 나머지 매트릭스를 채움.
 
 * 행렬의 마지막에서 시작하여 가장 작은 숫자의 칸으로 이동하여 warping path 생성. 대각선 변화량에 따라 유사도를 구함.
 
-![Alt text](/img/DTW_graph.jpg)
+![Alt text](/img/DTW_graph.JPG)
 
 <br>
 
@@ -53,7 +53,7 @@ IoT Smart Gesture Controller
 
 ### -  Sensor Graph
 
-![Alt text](/img/Sensor_visualization.jpg)
+![Alt text](/img/Sensor_visualization.JPG)
 [Accelerometer, Gyro, Flex data sensor graph] 
 
 <br>
