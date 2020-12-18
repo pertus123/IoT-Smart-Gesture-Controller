@@ -21,7 +21,6 @@ IoT Smart Gesture Controller
 - main에서 호출
 	- 비교가 끝나고, 등록할 때,  graph.deleteAll(tble_Name)으로 원래테이블 초기화 
 
-<br>
 
 ### 등록모드
 ```
@@ -47,7 +46,6 @@ def enCoff(controlName, cnt): # 등록모드 수행 controlName = 테이블이�
             print("complete!")
 ```
 
-<br>
 
 ### 비교 모드
 ```
