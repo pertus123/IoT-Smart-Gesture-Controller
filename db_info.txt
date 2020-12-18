@@ -1,0 +1,60 @@
+alter table blindUp add (
+AccX2 float not null,
+AccY2 float not null,
+AccZ2 float not null,
+GyX2 float not null,
+GyY2 float not null,
+GyZ2 float not null,
+FlexA2 float not null,
+FlexB2 float not null,
+FlexC2 float not null,
+FlexD2 float not null,
+AccX3 float not null,
+AccY3 float not null,
+AccZ3 float not null,
+GyX3 float not null,
+GyY3 float not null,
+GyZ3 float not null,
+FlexA3 float not null,
+FlexB3 float not null,
+FlexC3 float not null,
+FlexD3 float not null
+);
+
+create table blindDown(
+AccX1 float not null,
+AccY1 float not null,
+AccZ1 float not null,
+GyX1 float not null,
+GyY1 float not null,
+GyZ1 float not null,
+FlexA1 float not null,
+FlexB1 float not null,
+FlexC1 float not null,
+FlexD1 float not null,
+AccX2 float not null,
+AccY2 float not null,
+AccZ2 float not null,
+GyX2 float not null,
+GyY2 float not null,
+GyZ2 float not null,
+FlexA2 float not null,
+FlexB2 float not null,
+FlexC2 float not null,
+FlexD2 float not null,
+AccX3 float not null,
+AccY3 float not null,
+AccZ3 float not null,
+GyX3 float not null,
+GyY3 float not null,
+GyZ3 float not null,
+FlexA3 float not null,
+FlexB3 float not null,
+FlexC3 float not null,
+FlexD3 float not null);
+gesture device
+
+cellular
+SELECT COUNT(*) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'blindUp';
+[출처] 오라클 컬럼 갯수, 컬럼 총Size|작성자 긴급구조
+20 surprising iot satistic you don't already know

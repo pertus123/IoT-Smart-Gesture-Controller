@@ -1,0 +1,184 @@
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+1
+2
+3
+4
+5
+6
+7
+1
+9
+8
+7
+3
+3
+3
+2
+4
+5
+6
+8
+1episode:0, score:30
+episode:1, score:29
+episode:2, score:28
+episode:3, score:27
+episode:4, score:26
+episode:5, score:25
+episode:6, score:24
+episode:7, score:23
+episode:8, score:22
+episode:9, score:21
+episode:10, score:20
+episode:11, score:19
+episode:12, score:18
+episode:13, score:17
+episode:14, score:16
+episode:15, score:15
+episode:16, score:14
+episode:17, score:13
+episode:18, score:12
+episode:19, score:11
+episode:20, score:10
+episode:21, score:9
+episode:22, score:8
+episode:23, score:7
+episode:24, score:6
+episode:25, score:5
+episode:26, score:4
+episode:27, score:3
+episode:28, score:2
+episode:29, score:1
+episode:30, score:0
+episode:0, score:30
+episode:1, score:29
+episode:2, score:28
+episode:3, score:27
+episode:4, score:26
+episode:5, score:25
+episode:6, score:24
+episode:7, score:23
+episode:8, score:22
+episode:9, score:21
+episode:10, score:20
+episode:11, score:19
+episode:12, score:18
+episode:13, score:17
+episode:14, score:16
+episode:15, score:15
+episode:16, score:14
+episode:17, score:13
+episode:18, score:12
+episode:19, score:11
+episode:20, score:10
+episode:21, score:9
+episode:22, score:8
+episode:23, score:7
+episode:24, score:6
+episode:25, score:5
+episode:26, score:4
+episode:27, score:3
+episode:28, score:2
+episode:29, score:1
+episode:30, score:0
+episode:0, score:30
+episode:1, score:29
+episode:2, score:28
+episode:3, score:27
+episode:4, score:26
+episode:5, score:25
+episode:6, score:24
+episode:7, score:23
+episode:8, score:22
+episode:9, score:21
+episode:10, score:20
+episode:11, score:19
+episode:12, score:18
+episode:13, score:17
+episode:14, score:16
+episode:15, score:15
+episode:16, score:14
+episode:17, score:13
+episode:18, score:12
+episode:19, score:11
+episode:20, score:10
+episode:21, score:9
+episode:22, score:8
+episode:23, score:7
+episode:24, score:6
+episode:25, score:5
+episode:26, score:4
+episode:27, score:3
+episode:28, score:2
+episode:29, score:1
+episode:30, score:0
+episode:0, score:30
+episode:1, score:29
+episode:2, score:28
+episode:3, score:27
+episode:4, score:26
+episode:5, score:25
+episode:6, score:24
+episode:7, score:23
+episode:8, score:22
+episode:9, score:21
+episode:10, score:20
+episode:11, score:19
+episode:12, score:18
+episode:13, score:17
+episode:14, score:16
+episode:15, score:15
+episode:16, score:14
+episode:17, score:13
+episode:18, score:12
+episode:19, score:11
+episode:20, score:10
+episode:21, score:9
+episode:22, score:8
+episode:23, score:7
+episode:24, score:6
+episode:25, score:5
+episode:26, score:4
+episode:27, score:3
+episode:28, score:2
+episode:29, score:1
+episode:30, score:0
+episode:0, score:30
+episode:1, score:29
+episode:2, score:28
+episode:3, score:27
+episode:4, score:26
+episode:5, score:25
+episode:6, score:24
+episode:7, score:23
+episode:8, score:22
+episode:9, score:21
+episode:10, score:20
+episode:11, score:19
+episode:12, score:18
+episode:13, score:17
+episode:14, score:16
+episode:15, score:15
+episode:16, score:14
+episode:17, score:13
+episode:18, score:12
+episode:19, score:11
+episode:20, score:10
+episode:21, score:9
+episode:22, score:8
+episode:23, score:7
+episode:24, score:6
+episode:25, score:5
+episode:26, score:4
+episode:27, score:3
+episode:28, score:2
+episode:29, score:1
+episode:30, score:0

@@ -1,0 +1,205 @@
+//합
+#include <ArduinoJson.h>
+#include <Wire.h>
+#include "I2Cdev.h"
+#include <WiFi.h>
+#include <PubSubClient.h>
+#include "MPU6050.h"
+//#include <Servo.h>
+#include <ESP32Servo.h>
+#define pi 3.141592
+#define RADIANS_TO_DEGREES 180/3.14159
+#define fs 131.0;
+const size_t capacity = 2*JSON_ARRAY_SIZE(3) + JSON_ARRAY_SIZE(4) + JSON_OBJECT_SIZE(4);
+WiFiClient espClient;
+PubSubClient client(espClient);
+
+Servo Window;
+Servo Door; 
+int led = 16;
+int winservo = 18;
+int doorservo = 5;
+int a;
+int b;
+
+
+const char* ssid = "Redmi";
+const char* password = "11111111";
+const char* mqtt_server = "54.180.101.122";
+const char* clientName = "ESP32";
+const char* outTopic = "test";
+const char* inTopic = "test";
+const char* outTopic1 = "test";
+
+String ledControlString = "";
+bool check = false;
+
+
+// Motor A
+int motor1Pin1 = 27; 
+int motor1Pin2 = 26; 
+int enable1Pin = 14; 
+
+// Setting PWM properties
+const int freq = 5000;
+const int pwmChannel = 0;
+const int resolution = 8;
+int dutyCycle = 10;
+
+void setup() {
+
+ pinMode(led, OUTPUT);   
+  Window.attach(winservo);
+  Door.attach(doorservo);
+  
+  //MPU6050 Setup
+  Wire.begin();
+  Serial.begin(115200);
+  //WiFi Setup
+  setup_wifi();
+  client.setServer(mqtt_server, 1883);
+  client.setCallback(callback);
+  
+  // sets the pins as outputs:
+  pinMode(motor1Pin1, OUTPUT);
+  pinMode(motor1Pin2, OUTPUT);
+  pinMode(enable1Pin, OUTPUT);
+  
+  // configure LED PWM functionalitites
+  ledcSetup(pwmChannel, freq, resolution);
+  
+  // attach the channel to the GPIO to be controlled
+  ledcAttachPin(enable1Pin, pwmChannel);
+
+  Serial.begin(115200);
+
+  // testing
+  Serial.print("Testing DC Motor...");
+}
+void blindOn(){
+  Serial.println("7");
+  ledcWrite(pwmChannel, 150); 
+  // Move the DC motor forward at maximum speed
+  Serial.println("Moving Forward");
+  digitalWrite(motor1Pin1, 0); //각 
+  digitalWrite(motor1Pin2, 255); 
+  delay(2000);
+}
+
+void blindOff(){
+  Serial.println("8");
+  ledcWrite(pwmChannel, 150); 
+  // Move the DC motor forward at maximum speed
+  Serial.println("Moving Forward");
+  digitalWrite(motor1Pin1, 255); //각 
+  digitalWrite(motor1Pin2, 0); 
+  delay(2000);
+}
+
+void loop() {
+ if(!client.connected()) reconnect();
+ client.loop();
+  delay(100); 
+  // Stop the DC motor
+  /*
+  Serial.println("Motor stopped");
+  digitalWrite(motor1Pin1, 0);
+  digitalWrite(motor1Pin2, 0);
+  delay(500);
+  */
+ /*
+  // Move DC motor backwards at maximum speed
+  Serial.println("Moving Backwards");
+  digitalWrite(motor1Pin1, 127);
+  digitalWrite(motor1Pin2, 0); 
+  delay(500);
+*/
+  // Stop the DC motor
+  /*
+  Serial.println("Motor stopped");
+  digitalWrite(motor1Pin1, 0);
+  digitalWrite(motor1Pin2, 0);
+  delay(500);*/
+  // Move DC motor forward with increasing speed
+
+  /*
+  while (dutyCycle <= 200){
+    ledcWrite(pwmChannel, dutyCycle);   
+    Serial.print("Forward with duty cycle: ");
+    Serial.println(dutyCycle);
+    dutyCycle = dutyCycle + 5;
+    delay(50);
+  }
+  dutyCycle = 10;
+  */
+}
+String readSerial() {
+  String str = "";
+  char ch;
+
+  while(Serial.available() > 0) {
+    ch = Serial.read();
+    str.concat(ch);
+    delay(10);
+  }
+  return str;
+}
+
+//Message Queue Callback initialize
+void callback(char* topic, byte* payload, unsigned int length) {
+  ledControlString = "";
+  //Serial.print("Message arrived [");
+  //Serial.print(topic);
+  //Serial.print("] ");
+  for (int i = 0; i < length; i++) {
+    ledControlString += (char)payload[i];
+    //Serial.print((char)payload[i]);
+  }
+
+  execute(ledControlString);
+ // Serial.println();
+}
+
+void execute(String control) {
+  if(control == "blindOn") blindOn();
+  if(control == "blindOff") blindOff();
+}
+
+//재접속 시도
+void reconnect() {
+  // Loop until we're reconnected
+  while (!client.connected()) {
+    Serial.print("Attempting MQTT connection...");
+    // Attempt to connect
+    if (client.connect(clientName)) {
+      Serial.println("connected");
+      // Once connected, publish an announcement...
+      client.publish(outTopic, "hello world");
+      // ... and resubscribe
+      client.subscribe(inTopic);
+    } else {
+      Serial.print("failed, rc=");
+      Serial.print(client.state());
+      Serial.println(" try again in 5 seconds");
+      // Wait 5 seconds before retrying
+      delay(5000);
+    }
+  }
+}
+
+//WiFi 설정
+void setup_wifi() {
+  delay(10); // We start by connecting to a WiFi network
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+  Serial.println("WiFi connected");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
+}
