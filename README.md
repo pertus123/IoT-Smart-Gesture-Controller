@@ -6,12 +6,12 @@ IoT Smart Gesture Controller
 
 - databases
   - 테이블명 : blindDown, blindStop, blindUp, doorOff, doorOn, ledOff, ledOn, windowsOff, windowOn
-  - 각 테이블의 필드 명 : AccX1, AccY1, .... GyX2, GyY2.... FlexA3, FlexB3 로 30개 필드. 1,2,3 숫자로 구분.
+  - 각 테이블의 필드 명 : AccX1, AccY1, .... GyX2, GyY2.... FlexA3, FlexB3 30개 필드. 1,2,3 숫자로 구분.
 
 
 - testtt.py   // dtw 알고리즘. 
-	- dtwtest(comparison, fieldName, tableName) // comparison은 비교 값, fieldName 필드명, tableName 테이블명
-	- ts2 // db에서 필드명과 테이블명을 가지고 db에서 정보 조회
+	- dtwtest(comparison, fieldName, tableName) // 비교 값, 필드명, 테이블명
+	- ts2 // db에서 필드명과 테이블명으로 정보 조회
 
 - graph.py // db
 	- insert // tableName 테이블이름, fieldNumber AccX1,2,3 의 숫자
